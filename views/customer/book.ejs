@@ -1,0 +1,61 @@
+<%- include("../partials/header") %>
+<%- include("../partials/navbar") %>
+
+<section style="padding: 4rem 2rem; min-height: 100vh; background: linear-gradient(to bottom right, #ffffff, #f0f4ff);">
+  <h2 style="text-align: center; font-size: 2.5rem; color: #4b006e; margin-bottom: 3rem;">Book Your Appointment</h2>
+
+  <!-- Calendar -->
+  <div id="calendar" style="max-width: 900px; margin: 0 auto 4rem auto;"></div>
+
+  <!-- Booking Form -->
+  <div style="max-width: 500px; margin: 0 auto; background: #fff; padding: 2rem; border-radius: 1rem; box-shadow: 0 0 15px rgba(0,0,0,0.1);">
+    <form action="/customer/book" method="POST">
+      <div style="margin-bottom: 1rem;">
+        <label style="font-weight: bold;">Full Name</label>
+        <input type="text" name="name" required style="width: 100%; padding: 0.5rem; border-radius: 8px; border: 1px solid #ccc;" />
+      </div>
+
+      <div style="margin-bottom: 1rem;">
+        <label style="font-weight: bold;">Email</label>
+        <input type="email" name="email" required style="width: 100%; padding: 0.5rem; border-radius: 8px; border: 1px solid #ccc;" />
+      </div>
+
+      <div style="margin-bottom: 1rem;">
+        <label style="font-weight: bold;">Date</label>
+        <input type="date" name="date" required style="width: 100%; padding: 0.5rem; border-radius: 8px; border: 1px solid #ccc;" />
+      </div>
+
+      <div style="margin-bottom: 1.5rem;">
+        <label style="font-weight: bold;">Time Slot</label>
+        <select name="time" required style="width: 100%; padding: 0.5rem; border-radius: 8px; border: 1px solid #ccc;">
+          <option>10:00 AM</option>
+          <option>11:00 AM</option>
+          <option>12:00 PM</option>
+          <option>2:00 PM</option>
+          <option>4:00 PM</option>
+        </select>
+      </div>
+
+      <button type="submit" style="background: #4b006e; color: white; padding: 0.75rem 2rem; border: none; border-radius: 8px; cursor: pointer; transition: 0.3s;">
+        Book Now
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- FullCalendar Script -->
+<link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js'></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const calendarEl = document.getElementById("calendar");
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: "dayGridMonth",
+      height: 500,
+      events: "/customer/appointments/json", // Adjust route if needed
+    });
+    calendar.render();
+  });
+</script>
+
+<%- include("../partials/footer") %>

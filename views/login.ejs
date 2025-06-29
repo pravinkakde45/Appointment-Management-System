@@ -1,0 +1,187 @@
+<%- include("partials/header") %>
+<%- include("partials/navbar") %>
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #ffffff);
+  }
+
+  .login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding: 2rem;
+  }
+
+  .login-box {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 950px;
+    border-radius: 16px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .login-form {
+    flex: 1;
+    padding: 3rem 2rem;
+  }
+
+  .login-form h2 {
+    font-size: 28px;
+    margin-bottom: 1rem;
+    color: #1a237e;
+  }
+
+  .login-form input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+
+  .login-form input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  }
+
+  .login-form button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #007bff, #00c6ff);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .login-form button:hover {
+    opacity: 0.9;
+  }
+
+  .social-login {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .social-login a {
+    background: linear-gradient(to right, #fff, #e3f2fd);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+  }
+
+  .social-login a:hover {
+    transform: scale(1.1);
+  }
+
+  .login-image {
+    flex: 1;
+    background-color: #e3f2fd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .login-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .bottom-text {
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .bottom-text a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+</style>
+
+<div class="login-wrapper">
+  <div class="login-box">
+    <!-- Left: Login Form -->
+    <div class="login-form">
+      <h2>Sign in to Appointment System</h2>
+      <form action="/auth/login" method="POST">
+        <input type="email" name="email" placeholder="Email address" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Sign In</button>
+      </form>
+
+      <div class="social-login">
+        <a href="#"><i class="fab fa-google"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+
+      <div class="bottom-text">
+        Don't have an account? <a href="/auth/register">Sign up now</a>
+      </div>
+    </div>
+
+    <!-- Right: Illustration Image -->
+    <div class="login-image">
+<img src="https://img.icons8.com/clouds/500/appointment-reminders.png" alt="Login Illustration" />
+    </div>
+  </div>
+</div>
+
+<div class="slider-wrapper">
+  <div class="slider-track">
+    <div class="slide">
+      <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="Secure Password" />
+      <p>Your password is safe with us</p>
+    </div>
+    <div class="slide">
+      <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" alt="Easy Booking" />
+      <p>Book appointments easily</p>
+    </div>
+    <div class="slide">
+      <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="2FA Security" />
+      <p>2FA enabled for better protection</p>
+    </div>
+    <div class="slide">
+      <img src="https://cdn-icons-png.flaticon.com/512/1143/1143291.png" alt="Reminders" />
+      <p>Get timely appointment reminders</p>
+    </div>
+    <div class="slide">
+      <img src="https://cdn-icons-png.flaticon.com/512/484/484167.png" alt="Cloud Security" />
+      <p>Cloud secured appointment data</p>
+    </div>
+    <div class="slide">
+      <img src="https://cdn-icons-png.flaticon.com/512/483/483361.png" alt="Encrypted Info" />
+      <p>Encrypted user data for privacy</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<%- include("partials/footer") %>

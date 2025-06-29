@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | Appointment System</title>
+  <link rel="stylesheet" href="/css/register.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-brand">Appointment System</div>
+    <div class="navbar-links">
+      <a href="/">Home</a>
+      <a href="/auth/login">Login</a>
+      <a href="/auth/register" class="active">Register</a>
+      <a href="/about">About</a>
+    </div>
+  </nav>
+<form action="/auth/register" method="POST">
+     
+  <div class="register-wrapper">
+    <div class="register-box">
+      <h2>Create an Account</h2>
+      <form class="register-form" action="/auth/register" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <input type="password" name="confirmPassword" placeholder="Confirm Password" required />
+        <button type="submit">Create Account</button>
+      </form>
+
+      <p class="login-link">Already have an account? <a href="/auth/login">Login here</a></p>
+
+      <div class="social-login">
+        <span>Sign up with</span>
+        <div class="social-icons">
+          <a href="#"><img src="https://img.icons8.com/color/48/google-logo.png" alt="Google" /></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/48/github.png" alt="GitHub" /></a>
+          <a href="#"><img src="https://img.icons8.com/fluency/48/facebook-new.png" alt="Facebook" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 🌐 Footer -->
+
+</body>
+</html>
+

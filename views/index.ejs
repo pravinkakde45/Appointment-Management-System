@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Appointment Management System</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    /* Gradient background */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #a18cd1, #fbc2eb);
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero img {
+      width: 300px;
+      max-width: 90%;
+      transition: transform 0.3s ease;
+    }
+
+    .hero img:hover {
+      transform: scale(1.05);
+    }
+
+    .cta-btn {
+      background-color: white;
+      color: #7e22ce;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .cta-btn:hover {
+      background-color: #7e22ce;
+      color: white;
+    }
+
+    /* Feature Section */
+    .features {
+      background-color: #fff;
+      padding: 4rem 2rem;
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .feature {
+      flex: 1;
+      min-width: 250px;
+      max-width: 300px;
+      background-color: #f3f4f6;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature img {
+      width: 70px;
+      margin-bottom: 1rem;
+    }
+
+    .feature h3 {
+      color: #7e22ce;
+      margin-bottom: 0.5rem;
+    }
+
+    .scroll-link {
+      font-size: 1.5rem;
+      color: white;
+      text-decoration: none;
+      margin-top: 2rem;
+    }
+
+    .scroll-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <%- include("partials/navbar") %>
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="https://img.freepik.com/free-vector/schedule-booking-with-calendar-businessman_107791-15431.jpg?t=st=1719492951~exp=1719496551~hmac=2b58208a2ea02c51fc0b420d730ce4ae92be20c81c7063d76d3ecb33fd8c5867&w=826" alt="Booking Image">
+    <h1>Appointment Management System</h1>
+    <p>Book, manage, and organize your appointments with ease and style.</p>
+    <a href="/auth/login" class="cta-btn">Get Started</a>
+    <a href="#features" class="scroll-link">↓ Learn More</a>
+  </section>
+
+  <!-- Features Section -->
+  <section style="padding: 4rem 2rem; background: #f5f5f5;">
+  <h2 style="text-align: center; font-size: 2.5rem; color: #4b006e; margin-bottom: 3rem;">Why Choose Us</h2>
+  
+  <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+    <% const features = [
+      { icon: "⚡", title: "Fast Booking", desc: "Book appointments in seconds." },
+      { icon: "🔒", title: "Secure", desc: "Your data is safe with us." },
+      { icon: "📆", title: "Calendar Sync", desc: "Integrated with your calendar." },
+      { icon: "📧", title: "Email Reminders", desc: "Get timely alerts." }
+    ]; %>
+
+    <% features.forEach(f => { %>
+      <div style="
+        background: linear-gradient(to top left, #ffffff, #f2e5ff);
+        border-radius: 1rem;
+        padding: 2rem;
+        width: 250px;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        transition: transform 0.4s, box-shadow 0.4s;
+      " onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 0 25px #a200ff';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)';">
+        <div style="font-size: 2.5rem; margin-bottom: 1rem;"><%= f.icon %></div>
+        <h3 style="color: #4b006e; margin-bottom: 0.5rem;"><%= f.title %></h3>
+        <p style="color: #555;"><%= f.desc %></p>
+      </div>
+    <% }); %>
+  </div>
+</section>
+
+
+<footer style="text-align:center; padding:1rem; background:#4b006e; color:white;">
+  &copy; <%= new Date().getFullYear() %> Pravin
+</footer>
+
+</body>
+</html>
